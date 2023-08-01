@@ -1,21 +1,20 @@
 var mysql = require('mysql');
 
-var connection = mysql.createConnection({
+var connectDB = mysql.createConnection({
     host: "localhost",
     user: "mluciano",
     password: "12345678",
     database: "ecommerce"
 });
 
-const connectDB = async () => {
-    try{
-        connection.connect(() => {
-            console.log("DB connected!")
-        })
-    }
-    catch(error){
+connectDB.connect((error) => {
+    if(error){
         throw error;
     }
-}
+    else{
+       console.log("DB connected!");
+    }
+    
+})
 
 module.exports = connectDB;
