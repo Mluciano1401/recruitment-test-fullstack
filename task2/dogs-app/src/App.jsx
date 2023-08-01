@@ -6,7 +6,13 @@ function App() {
 
   return (
     <>
+      <header>
+        <h2>Dog App</h2>
+      </header>
       <GridSection></GridSection>
+      <footer>
+        <span>this site was created with react and dog api</span>
+      </footer>
     </>
   )
 }
