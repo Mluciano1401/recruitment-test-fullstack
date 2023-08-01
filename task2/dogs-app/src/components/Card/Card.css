@@ -6,7 +6,7 @@
     flex-direction: column;
     align-items: center;
 }
-.box-img-card{
+.box-img-card, .box-breeds-card{
     width: 200px;
     height: 200px;
 }
@@ -16,9 +16,16 @@
     height: 100%;
 }
 
-.card-name:hover{
+.card-content:hover{
     color: aquamarine;
+    box-shadow: 0.2 0.4 0.5 aquamarine;
 }
 .box-breeds-card{
     background-color: rgb(40, 38, 38);
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 18px;
 }

@@ -14,14 +14,14 @@ function GridSection() {
     setData(response);
   }
   return (
-    <> 
+    <div className='wrap-grid-content'> 
     { 
     data ?
     data.map(item => (
-        <Card key={id++} data={item}> </Card>
+        <Card key={id++} data={item} className="grid-item"> </Card>
     )) : (<h3>Loading ...</h3>)
     }
-    </>
+    </div>
   )
 }
 
