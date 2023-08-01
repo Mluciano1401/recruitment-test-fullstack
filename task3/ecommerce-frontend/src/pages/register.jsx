@@ -9,11 +9,11 @@ function Register() {
             <label>
                 Email:
             </label>
-            <input type='text' className='input'/>
+            <input type='text' className='input-control'/>
             <label>
                 Password:
             </label>
-            <input type="password" className="input" />
+            <input type="password" className="input-control" />
        </div>
        <div className="box-msg">
         
