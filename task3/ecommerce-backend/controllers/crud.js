@@ -1,11 +1,7 @@
 const connectDB = require('../config/db_config');
 
 exports.create = (req, res) => {
-    console.log(req.body);
-    const name = req.body.name;
-    const price = req.body.price;
-    const desc = req.body.desc;
-    const img = req.body.img;
+    const {name, price, desc, img} = req.body;
 
     connectDB.query('INSERT INTO products SET ?',{
         name:name,
@@ -14,8 +10,7 @@ exports.create = (req, res) => {
         image:img}, 
         (error, result)=>{
         if(error){
-            console.log(error.message);
-            throw error;
+            res.status(500).send({"Error":error});
         }
         else{
             res.send("Created!");
@@ -26,7 +21,7 @@ exports.create = (req, res) => {
 exports.show = (req, res) => {
     connectDB.query('SELECT * FROM products',(error, result)=>{
         if(error){
-            throw error;
+            res.status(500).send({"Error":error});
         }
         else{
             res.send(result);
