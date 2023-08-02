@@ -1,11 +1,13 @@
 import { useState } from 'react'; 
 import './styles/form.css'
 import * as api from '../services/auth.services';
+import  { useNavigate } from 'react-router-dom';
 
 function Login() {
   const [valid, setValid] = useState({});
   const [msg, setMsg] = useState("");
-
+  const navigate = useNavigate();
+  
   const handleChange = (e) => {
     const name = e.target.name;
     const value = e.target.value;
@@ -24,6 +26,7 @@ function Login() {
     const result = await api.loginUser(valid);
     sessionStorage.setItem('token', result.token);
     setMsg("");
+    navigate('/products');
    }
   return (
     <>

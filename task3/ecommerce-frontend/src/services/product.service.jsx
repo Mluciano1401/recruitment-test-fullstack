@@ -2,10 +2,19 @@ import axios from 'axios';
 
 const urlbase = "http://localhost:4000/api/";
 
-export const postProduct = async(product) => {
+const setToken = (token) => {
+    const config = {
+        headers:{
+            'Authorization': "Bearer " + token
+        }
+    };
+    return config;
+}
+
+export const postProduct = async(product, token) => {
     // eslint-disable-next-line no-useless-catch
     try{
-        const response = await axios.post(`${urlbase}product`,product);
+        const response = await axios.post(`${urlbase}product`,product, setToken(token));
         return response.data;
     }
     catch(error){
@@ -13,10 +22,10 @@ export const postProduct = async(product) => {
     }
 }
 
-export const getProduct = async() => {
+export const getProduct = async(token) => {
     // eslint-disable-next-line no-useless-catch
     try{
-        const response = await axios.get(`${urlbase}products`);
+        const response = await axios.get(`${urlbase}products`, setToken(token));
         return response.data;
     }
     catch(error){

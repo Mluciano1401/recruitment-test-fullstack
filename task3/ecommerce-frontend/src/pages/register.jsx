@@ -1,10 +1,12 @@
 import { useState } from 'react'; 
 import './styles/form.css'
 import * as api from '../services/auth.services';
+import  { useNavigate } from 'react-router-dom';
 
 function Register() {
     const [valid, setValid] = useState({});
     const [msg, setMsg] = useState("");
+    const navigate = useNavigate();
 
     const handleChange = (e) => {
         const name = e.target.name;
@@ -24,11 +26,12 @@ function Register() {
         const result = await api.registerUser(valid);
         sessionStorage.setItem('token', result.token);
         setMsg("");
+        navigate('/products');
     }
   return (
     <>
       <form onSubmit={submit} noValidate={true} className="form-wrap">
-        <h1>register</h1>
+        <h1>Register</h1>
         <div className="form-content">
             <label>
                 Email:
