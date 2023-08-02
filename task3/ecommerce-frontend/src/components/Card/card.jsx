@@ -1,7 +1,6 @@
 import './card.css'
 
 function Card({data}) {
-
   return (
     <>
       <div className="wrap-card">

@@ -1,8 +1,8 @@
 .wrap-carousel{
     background-color: rgb(38, 37, 37);
-    display: block;
     padding: 22px;
-    width: 600px;
+    width: 700px;
+    display:block;
 }
 .carousel-grid{
     position: relative;
@@ -20,10 +20,13 @@
     border-radius: 50%;
     user-select: none;
 }
+.btn-arrow:hover{
+    background-color: rgba(0,0,0,0.8);
+}
 .carousel-buttons{
     position: absolute;
     top: 50%;
-    width: 600px;
+    width: 700px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
