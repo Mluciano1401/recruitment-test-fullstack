@@ -24,7 +24,22 @@ exports.show = (req, res) => {
             res.status(500).send({"Error":error});
         }
         else{
-            res.send(result);
-        }
+            const newresult = [];
+            for(let i = 0; i < result.length; i ++){
+                if(result[i].image != null){             
+                   const buffer = result[i].image; 
+                   const base64String = buffer.toString('base64');
+                    const newr = {
+                            "name":result[i].name,
+                            "price":result[i].price,
+                            "description":result[i].description,
+                            "image": `data:image/png;base64,${base64String}`}
+                    newresult.push(newr);
+                }else{
+                    newresult.push(result[i]);
+                }
+            }         
+            res.send(newresult);
+        }            
     })
 }
