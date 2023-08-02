@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import './carousel.css'
 import Card from '../Card/card';
-
+import * as api from '../../services/product.service';
 function Carousel() {
   const [data, setData] = useState([]);
   useEffect(()=>{
@@ -9,7 +9,9 @@ function Carousel() {
   })
 
   const getData = async() =>{
-    setData();
+    let token = sessionStorage.getItem('token');
+    const result = await api.getProduct(token); 
+    setData(result);
   }
 
   return (
@@ -17,8 +19,14 @@ function Carousel() {
       <div className="wrap-carousel">
         <div className="carousel-content">
             <div className="carousel-buttons">
-                <span className="btn-left"></span>
-                <span className="btn-rigth"></span>
+                <div className="btn-left btn-arrow">
+                  -
+                  <img className='img-arrow' src="" alt=""/>
+                </div>
+                <div className="btn-rigth btn-arrow">
+                +
+                  <img className='img-arrow' src="" alt=""/>
+                </div>
             </div>
             <div className="carousel-grid">
                 {data.map(element => (

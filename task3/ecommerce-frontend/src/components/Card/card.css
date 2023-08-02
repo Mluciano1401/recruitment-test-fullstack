@@ -1,0 +1,35 @@
+.wrap-card{
+    background-color: rgb(56, 56, 56);
+    margin: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.box-img-card{
+    width: 200px;
+    height: 150px;
+}
+.card-name{
+  font-size: 20px;
+}
+.car-price{
+    font-weight: 500;
+}
+.img-card{
+    width: 100%;
+    height: 100%;
+}
+
+.card-content:hover{
+    color: aquamarine;
+    box-shadow: 0.2 0.4 0.5 aquamarine;
+}
+.box-breeds-card{
+    background-color: rgb(40, 38, 38);
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 18px;
+}
