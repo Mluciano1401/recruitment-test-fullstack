@@ -2,12 +2,15 @@ const connectDB = require('../config/db_config');
 
 exports.create = (req, res) => {
     const {name, price, desc, img} = req.body;
-
+    let blob = null;
+    if(img != null){
+        blob = Buffer.from(img,"binary");
+    }    
     connectDB.query('INSERT INTO products SET ?',{
         name:name,
         price:price,
         description:desc,
-        image:img}, 
+        image: blob}, 
         (error, result)=>{
         if(error){
             res.status(500).send({"Error":error});
