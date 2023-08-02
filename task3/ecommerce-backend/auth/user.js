@@ -9,11 +9,11 @@ exports.login = (req,res) => {
         }
         else if (result.length > 0){
             const user = result[0];
-            const token = jwt.sign({id: user.id}, "your-256-bit-secret");
+            const token = jwt.sign({user: user}, process.env.SECRETKEY);
             res.send({"token":token});
         }
         else{
-            res.status(401).send("");
+            res.status(401).send("password or email incorrect");
         }
     })
 
@@ -29,7 +29,7 @@ exports.register = (req, res) => {
             res.status(500).send({"Error":error});
         }
         else{
-            const token = jwt.sign({id: email}, "your-256-bit-secret");
+            const token = jwt.sign({user: result[0]}, process.env.SECRETKEY);
             res.send({"msg":"Created!", "token":token});
         }
     })
