@@ -5,6 +5,7 @@ function ProductForm() {
   return (
     <>
       <form action="" className="form-wrap">
+        <h1>products</h1>
         <div className="form-content">
             <label>
                 Name:

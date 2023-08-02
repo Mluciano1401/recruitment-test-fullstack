@@ -5,6 +5,7 @@ function Register() {
   return (
     <>
       <form action="" className="form-wrap">
+        <h1>register</h1>
         <div className="form-content">
             <label>
                 Email:

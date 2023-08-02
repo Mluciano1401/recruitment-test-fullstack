@@ -2,4 +2,29 @@
     width: 500px;
     background-color: rgb(54, 53, 53);
     border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 22px;
+}
+.form-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+.input-control{
+    width: 90%;
+    padding: 12px;
+    border-radius: 8px;
+    margin: 12px;
+}
+.form-box-buttons{
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+label{
+    font-size: 1rem;
+    font-weight: 600;
 }
