@@ -9,6 +9,10 @@ function Home() {
         <h1>Shop</h1>
       </header>
       <main>
+        <div className='box-btn'>
+          <button className='btn-add'>
+            <a href='/create'>+</a></button>
+        </div>
         <Carousel></Carousel>
       </main>
       <footer>

@@ -1,0 +1,25 @@
+main{
+    margin: 12px;
+    padding: 20px;
+}
+header{
+     padding: 10px;
+     display: flex;
+     justify-content: start;
+}
+footer{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.box-btn{
+    display: flex;
+    justify-content: end;
+}
+.btn-add{
+    padding: 20px;
+    border-radius: 50%;
+    font-size: 18px;
+    font-weight: 700;
+    margin: 20px;
+}

@@ -30,28 +30,30 @@ function Register() {
     }
   return (
     <>
-      <form onSubmit={submit} noValidate={true} className="form-wrap">
-        <h1>Register</h1>
-        <div className="form-content">
-            <label>
-                Email:
-            </label>
-            <input type='text' className='input-control' name="email"
-            value={valid.email || ""} onChange={handleChange} required/>
-            <label>
-                Password:
-            </label>
-            <input type="password" className="input-control" name="password"
-            value={valid.password|| ""} onChange={handleChange} required/>
-       </div>
-       <div className="box-msg">
-            <p color='red'>{msg}</p>
-       </div>
-       <div className="form-box-buttons">
-            <button>Create</button>
-            <span>Do you have a account? <a>login!</a></span>
-       </div>
-      </form>
+      <div className='backgroud'>
+        <form onSubmit={submit} noValidate={true} className="form-wrap">
+            <h1>Register</h1>
+            <div className="form-content">
+                <label>
+                    Email:
+                </label>
+                <input type='text' className='input-control' name="email"
+                value={valid.email || ""} onChange={handleChange} required/>
+                <label>
+                    Password:
+                </label>
+                <input type="password" className="input-control" name="password"
+                value={valid.password|| ""} onChange={handleChange} required/>
+        </div>
+        <div className="box-msg">
+                <p color='red'>{msg}</p>
+        </div>
+        <div className="form-box-buttons">
+                <button>Create</button>
+                <span>Do you have a account? <a href='/'>login!</a></span>
+        </div>
+        </form>
+      </div>
     </>
   )
 }

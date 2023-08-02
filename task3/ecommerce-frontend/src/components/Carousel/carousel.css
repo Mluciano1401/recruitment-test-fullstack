@@ -32,3 +32,12 @@
     justify-content: space-between;
     z-index: 1;
 }
+.img-arrow{
+    width: 15px;
+}
+.btn-left{
+    transform: rotate(90deg);
+}
+.btn-rigth{
+    transform: rotate(-90deg);
+}

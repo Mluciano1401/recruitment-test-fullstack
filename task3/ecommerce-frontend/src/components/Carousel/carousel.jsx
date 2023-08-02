@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react'
 import './carousel.css'
 import Card from '../Card/card';
 import * as api from '../../services/product.service';
+import arrow from '../../assets/arrow.png'
+
 function Carousel() {
   const [data, setData] = useState([]);
   const [start, setStart] = useState(0);
@@ -36,12 +38,10 @@ function Carousel() {
         <div className="carousel-content">
             <div className="carousel-buttons">
                 <div className="btn-left btn-arrow" onClick={prevSlides}>
-                  -
-                  <img className='img-arrow' src="" alt=""/>
+                  <img className='img-arrow' src={arrow} alt=""/>
                 </div>
                 <div className="btn-rigth btn-arrow" onClick={nextSlides}>
-                +
-                  <img className='img-arrow' src="" alt=""/>
+                  <img className='img-arrow' src={arrow} alt=""/>
                 </div>
             </div>
             <div className="carousel-grid">

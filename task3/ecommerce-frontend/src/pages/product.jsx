@@ -30,38 +30,40 @@ function ProductForm() {
     }
   return (
     <>
-      <form onSubmit={submit} className="form-wrap">
-        <h1>Products</h1>
-        <div className="form-content">
-            <label>
-                Name:
-            </label>
-            <input type='text' className='input-control' name="name"
-            value={valid.name || ""} onChange={handleChange} required/>
-            <label>
-                Price:
-            </label>
-            <input type="number" className="input-control" name="price"
-            value={valid.price || ""} onChange={handleChange} required/>
-            <label>
-                Description:
-            </label>
-            <input type='text' className='input-control' name="desc"
-            value={valid.desc || ""} onChange={handleChange} required/>
-            <label>
-                Image:
-            </label>
-            <input type='image' className='input-control' name="img"
-            value={valid.img || ""} onChange={handleChange} required/>
-       </div>
-       <div className="box-msg">
-          <p color="red">{msg}</p>
-       </div>
-       <div className="form-box-buttons">
-            <button type='submit'>Create</button>
-            <button>Cancel</button>
-       </div>
-      </form>
+     <div className='backgroud'>
+        <form onSubmit={submit} className="form-wrap">
+            <h1>Products</h1>
+            <div className="form-content">
+                <label>
+                    Name:
+                </label>
+                <input type='text' className='input-control' name="name"
+                value={valid.name || ""} onChange={handleChange} required/>
+                <label>
+                    Price:
+                </label>
+                <input type="number" className="input-control" name="price"
+                value={valid.price || ""} onChange={handleChange} required/>
+                <label>
+                    Description:
+                </label>
+                <input type='text' className='input-control' name="desc"
+                value={valid.desc || ""} onChange={handleChange} required/>
+                <label>
+                    Image:
+                </label>
+                <input type='file' className='input-control' name="img" accept="image/*"
+                value={valid.img || ""} onChange={handleChange} required/>
+        </div>
+        <div className="box-msg">
+            <p color="red">{msg}</p>
+        </div>
+        <div className="form-box-buttons">
+                <button type='submit'>Add</button>
+                <button><a href='/products'>Cancel</a></button>
+        </div>
+        </form>
+     </div>
     </>
   )
 }
