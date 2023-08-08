@@ -4,7 +4,7 @@ var connectDB = mysql.createConnection({
     host: process.env.DBHOST,
     user: process.env.DBUSER,
     password: process.env.DBPASSWORD,
-    database: "ecommerce"
+    database: process.env.DBNAME 
 });
 
 connectDB.connect((error) => {
